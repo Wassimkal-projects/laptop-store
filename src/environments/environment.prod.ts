@@ -1,4 +1,4 @@
 export const environment = {
-  backendUrl: 'http://localhost:8055/',
+  backendUrl: 'https://laptop-store.netlify.app/',
   production: true
 };
