@@ -1,0 +1,99 @@
+<!--Striped rows Light Starts-->
+<div class="row">
+  <div class="col-md-2">
+    <div class="card">
+      <div class="card-header">
+        Price
+      </div>
+      <div class="card-content">
+        <div class="card-body">
+          <div>
+            <label for="max-price-input">Max price</label>
+            <input style="width: 45%; margin-left: 5px; border-radius: 5px"
+                   type="number"
+                   id="max-price-input"
+                   (change)="filterWithPrice('price', $event, 'LESS_THAN')">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let filterKey of filterKeys;" class="card">
+      <div class="card-header">
+        {{filterKey}}
+      </div>
+      <div class="card-content">
+        <div class="card-body">
+          <div *ngFor="let filterValue of filterValues.get(filterKey); let j = index"
+               class="custom-control custom-checkbox">
+            <input type="checkbox" (change)="filterWithParam(filterKey, filterValue, $event.target.checked, 'EQUAL')"
+                   class="custom-control-input" id="{{filterValue}}-checkbox">
+            <label class="custom-control-label" for="{{filterValue}}-checkbox">{{filterValue}}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-10">
+    <section id="striped-light">
+      <div class="row text-left">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title text-center">Laptop shop</h4>
+              <p>{{totalItems}} matches</p>
+            </div>
+            <div class="card-content">
+              <div class="card-body">
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Reference</th>
+                    <th>Price</th>
+                    <th>Brand</th>
+                    <th>Processor type</th>
+                    <th>Ram size</th>
+                    <th>Hard disk</th>
+                    <th>Weight</th>
+                    <th>Graphics processor</th>
+                    <th>Screen size</th>
+                    <th>Screen type</th>
+                    <th>operating system</th>
+                    <th>Available</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let laptop of searchedLaptops; let i = index">
+                    <th scope="row">{{i}}</th>
+                    <td>{{laptop.code}}</td>
+                    <td>{{laptop.price}}</td>
+                    <td>{{laptop.brand}}</td>
+                    <td>{{laptop.processorType}}</td>
+                    <td>{{laptop.ramSize}}</td>
+                    <td>{{laptop.hardDisk}}</td>
+                    <td>{{laptop.laptopWeight}}</td>
+                    <td>{{laptop.graphicsProcessor}}</td>
+                    <td>{{laptop.screenSize}}</td>
+                    <td>{{laptop.screenType}}</td>
+                    <td>{{laptop.operatingSystem}}</td>
+                    <td>{{laptop.available}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!--Pagination Starts-->
+            <div class="offset-6 col-xl-6 justify-content-lg-end">
+              <ngb-pagination (pageChange)="loadPage($event)" [collectionSize]="totalItems" [(page)]="currentPage"
+                              [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+            </div>
+            <!--agination Ends-->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
