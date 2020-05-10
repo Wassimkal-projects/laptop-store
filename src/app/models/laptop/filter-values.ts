@@ -6,7 +6,7 @@ export const FilterValues: Map<string, string[]> = new Map([
   ['hardDisk', ['500 GB', '1 TB', '256 SSD', '500 SSD']],
   ['laptopWeight', ['1 Kg', '1.5 Kg', '1.8 Kg', '2 Kg', '2.5 Kg', '3 Kg']],
   ['graphicsProcessor', ['Intel HD Graphics', 'Intel UHD Graphics', 'NVIDIA GeForce GTX', 'AMD Radeon HD']],
-  ['screenSize', ['12"', '12"', '17"']],
+  ['screenSize', ['12"', '15"', '17"']],
   ['screenType', ['4K', 'Full HD', 'HD', 'QHD']],
   ['operatingSystem', ['FreeDos', 'Linux', 'Windows 10']],
   ['available', ['true', 'false']],
