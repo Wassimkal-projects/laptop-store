@@ -1,4 +1,4 @@
 export const environment = {
-  backendUrl: 'https://laptop-store.netlify.app/',
+  backendUrl: 'https://laptop-store-filters.herokuapp.com/',
   production: true
 };
