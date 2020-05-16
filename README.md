@@ -1,4 +1,5 @@
-# AdvancedSearchFront
+# Laptop store / Filters demo
+Demo: [https://laptop-store.netlify.app/](https://laptop-store.netlify.app/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
